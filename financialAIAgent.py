@@ -11,7 +11,7 @@ os.environ["GROQ_API_KEY"] = os.getenv("GROQ_API_KEY")
 
 web_search_agent = Agent(
     name="Web Search Agent",
-    model=Groq(id="llama-3.2-1b-preview", backend="local"),  # ensure correct backend
+    model=Groq(id="gemma-7b-it", backend="local"),  # ensure correct backend
     tools=[DuckDuckGo()],
     instructions=["Always include the source of the information"],
     markdown=True,
@@ -20,8 +20,8 @@ web_search_agent = Agent(
 
 financial_agent = Agent(
     name="Financial AI Agent",
-    model=Groq(id="llama-3.2-1b-preview", backend="local"),
-    tools=[YFinanceTools(stock_price=True, analyst_recommendations=True, stock_recommendations=True, company_news=True)],
+    model=Groq(id="gemma-7b-it", backend="local"),
+    tools=[YFinanceTools(stock_price=True, analyst_recommendations=True, company_news=True)],
     instructions=["Use tables to display the data"],
     markdown=True,
     show_tools_calls=True,
