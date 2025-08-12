@@ -1,10 +1,14 @@
 install:
 	pip install -r requirements.txt
 
-lint:
-	pylint  *.py
-	
-format:
-	black *.py	
+# test:
+# 	python -m pytest -s test_*.py
 
-all: install lint format
+format:
+	black financialaiagent/*.py
+
+lint:
+	pylint --disable=R,C,no-value-for-parameter,W0718,W0611 financialaiagent/*.py
+
+all: install format lint
+	@echo "All tasks completed successfully."

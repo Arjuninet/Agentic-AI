@@ -21,8 +21,12 @@ os.environ["GROQ_API_KEY"] = os.getenv("GROQ_API_KEY")
 financial_agent = Agent(
     name="Financial AI Agent",
     model=Groq(id="llama-3.1-8b-instant", backend="local"),
-    tools=[YFinanceTools(stock_price=True, analyst_recommendations=True, company_news=True)],
-    instructions=["Use table to display the data and include the source of the information with date."],
+    tools=[
+        YFinanceTools(stock_price=True, analyst_recommendations=True, company_news=True)
+    ],
+    instructions=[
+        "Use table to display the data and include the source of the information with date."
+    ],
     markdown=True,
     show_tools_calls=True,
 )

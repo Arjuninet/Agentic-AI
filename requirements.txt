@@ -6,3 +6,6 @@ duckduckgo-search
 fastapi
 uvicorn
 groq
+pytest
+pylint
+black
