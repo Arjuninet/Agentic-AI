@@ -9,3 +9,12 @@ groq
 pytest
 pylint
 black
+python-multipart
+openai
+sqlalchemy
+pgvector
+pypdf
+sqlalchemy 
+psycopg2-binary
+phi
+psycopg[binary]
